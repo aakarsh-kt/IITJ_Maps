@@ -38,12 +38,15 @@
 //   );
 // }
 import React, { useEffect } from "react";
+require('dotenv').config();
 
+// Use the API key in your code
+const apiKey = process.env.API_KEY;
 const Map = () => {
   useEffect(() => {
     // Load the Google Maps JavaScript API script
     const script = document.createElement("script");
-    script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyC_rH1kNW-P4JTZA-4EIHMTW5REele5uDI&callback=initMap`;
+    script.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&callback=initMap`;
     script.async = true;
     document.head.appendChild(script);
 
