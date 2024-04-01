@@ -38,10 +38,7 @@
 //   );
 // }
 import React, { useEffect } from "react";
-require('dotenv').config();
-
-// Use the API key in your code
-const apiKey = process.env.API_KEY;
+const apiKey = import.meta.env.VITE_API_KEY;
 const Map = () => {
   useEffect(() => {
     // Load the Google Maps JavaScript API script
@@ -67,10 +64,10 @@ const Map = () => {
       center: { lat: 26.47, lng: 73.11 }, // Default center (San Francisco)
       zoom: 16, // Default zoom level
     });
-   
+
     // You can add more map options, markers, etc. here
   };
-  
+
   return <div id="map"></div>;
 };
 
